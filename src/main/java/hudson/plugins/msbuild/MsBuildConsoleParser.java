@@ -64,8 +64,8 @@ public class MsBuildConsoleParser extends LineTransformationOutputStream {
         // trim off CR/LF from the end
         line = trimEOL(line);
 
-        Pattern patternWarnings = Pattern.compile(".*\\d+\\sWarning\\(s\\).*");
-        Pattern patternErrors = Pattern.compile(".*\\d+\\sError\\(s\\).*");
+        Pattern patternWarnings = Pattern.compile(".*\\d+\\s(Warning|Warnung\(en\))\\(s\\).*");
+        Pattern patternErrors = Pattern.compile(".*\\d+\\s(Error|Fehler)\\(s\\).*");
 
         Matcher mWarnings = patternWarnings.matcher(line);
         Matcher mErrors = patternErrors.matcher(line);
