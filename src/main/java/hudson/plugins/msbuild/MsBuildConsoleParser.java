@@ -87,7 +87,7 @@ public class MsBuildConsoleParser extends LineTransformationOutputStream {
         }
 
         // Write to output
-        out.write(b, 0, len);
+        out.write(b, 0, len); // unicode chars break here like ö,ä,ü,Ö,Ä,Ü 
     }
 
     @Override
